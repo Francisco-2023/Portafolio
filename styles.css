@@ -824,19 +824,35 @@ footer {
         display: block;
     }
 
-    .inicio-container, .sobre-mi-container, .proyectos-contenedor, .educacion-contenedor, .experiencia-contenedor, .habilidades-grid, .certificaciones-contenedor, .contacto-new-container {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+    #inicio .inicio-container {
         flex-direction: column;
+        align-items: center; /* Centra todo horizontalmente */
+        text-align: center; /* Centra el texto */
     }
 
-    .inicio-image, .inicio-text, .sobre-mi-image, .sobre-mi-text {
-        flex: none;
+    #inicio .inicio-text {
+        text-align: center; /* Asegura que el párrafo y título estén centrados */
+        padding: 0 1rem; /* Agrega padding lateral para que no toque los bordes */
+    }
+
+    #inicio .inicio-image {
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho si se carga */
+        max-width: 300px; /* Limita el tamaño para no desbordar */
+        margin: 0 auto 1rem auto; /* Centra la imagen y agrega espacio abajo */
+    }
+
+    #inicio .inicio-image img {
         width: 100%;
+        height: auto;
+        border-radius: 10px; /* Opcional: bordes redondeados para mejor look */
     }
 
-    .inicio-text h2::after, .sobre-mi-text h2::after {
-        margin: 0.5rem auto;
+    /* Si el fondo rosa es no deseado (tu CSS tiene blanco), fuerza blanco en móvil */
+    body, #inicio {
+        background-color: #ffffff !important;
     }
+}
 
     h2 {
         font-size: 1.8rem;
@@ -871,6 +887,30 @@ footer {
 
     .contacto-form, .contacto-details {
         min-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    #sobre-mi .sobre-mi-container {
+        flex-direction: column;
+        align-items: center; /* Centra todo horizontalmente */
+        text-align: center; /* Centra el texto */
+    }
+
+    #sobre-mi .sobre-mi-text {
+        text-align: center; /* Asegura que el texto esté centrado */
+        padding: 0 1rem; /* Agrega padding lateral para evitar que toque los bordes */
+    }
+
+    #sobre-mi .sobre-mi-image {
+        width: 100%; /* Asegura que la imagen ocupe todo el ancho si se carga */
+        max-width: 300px; /* Limita el tamaño para no desbordar */
+        margin: 0 auto 1rem auto; /* Centra la imagen y agrega espacio abajo */
+    }
+
+    #sobre-mi .sobre-mi-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; /* Opcional: bordes redondeados para mejor look */
     }
 }
 
